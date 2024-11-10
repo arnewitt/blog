@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arne Wittmaack</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Standard Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  
+  <!-- PNG Fallback (For Browsers that Prefer PNG) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+
+  <!-- Apple Touch Icon (For iOS Devices) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+
+  <!-- Android and Microsoft Tiles -->
+  <link rel="icon" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/images/mstile-150x150.png">
+
+  <!-- Theme Color for Mobile Browser Bars -->
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    html {
+      overflow-y: scroll;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 100pt;
+      height: 100pt;
+      float: right;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .social-icons i {
+      font-size: 40px;
+      margin: 0 10px;
+      color: #333;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons i:hover {
+      color: #0077b5;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .top-links {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .top-links a {
+      color: #8B0000;
+      text-decoration: none;
+      font-size: 1em;
+      margin: 0 5px;
+    }
+
+    .top-links a:hover {
+      text-decoration: underline;
+    }
+
+    a:link {
+      color: #8B0000;
+      text-decoration: none;
+      font-size: 1em;
+      margin: 0 5px;
+    }
+
+    a:visited {
+      color: #8B0000;
+      text-decoration: none;
+      font-size: 1em;
+      margin: 0 5px;
+    }
+    </style>
+</head>
+
+<body>
+  <!-- Profile Image -->
+  <img src="assets/images/avatar.jpeg" alt="Arne Wittmaack">
+
+  <!-- Main App Container -->
+  <div id="app"></div>
+
+  <!-- Import Reusable Components -->
+  <script src="assets/js/components.js"></script>
+
+  <!-- Main Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const app = document.getElementById("app");
+
+      // Add top bar component
+      addTopNavigationBar();
+
+      // Title and introduction
+      app.appendChild(createElement("h1", "Arne Wittmaack"));
+      app.appendChild(createElement("p", "I am Arne Wittmaack, a Data & Generative AI Engineer at Accenture."));
+      app.appendChild(createElement("h2", "About Me And This Website"));
+      app.appendChild(createElement(
+        "p",
+        "Over the years, I realized that writing helps me structure my own thoughts. This site is primarily for myself. The content is focused on technology but without a specific topic in mind. I create content irregularly, with no claims to completeness. If you do not want to read through the whole site, listen to the following podcast that was created by AI using only this site's content as input. Please don't take it too seriously."
+      ));
+
+      // Create a container to center the audio player
+      const audioContainer = createElement("div", "", { style: "display: flex; justify-content: center; margin-top: 10px;" });
+      const audioPlayer = createElement("audio", "", {
+        controls: true,
+        src: "assets/audio/podcast.wav",
+        type: "audio/wav"
+      });
+      audioContainer.appendChild(audioPlayer);
+      app.appendChild(audioContainer);
+
+    // Professional Experience Section
+    app.appendChild(createElement("h2", "Professional Experience"));
+    const experienceTable = createElement("table");
+    experienceTable.innerHTML = `
+      <tr><th>When</th><th>Where</th><th>What</th></tr>
+      <tr><td>2024 - today</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Associate Manager, Gen AI Development & ML Engineering</td></tr>
+      <tr><td>2023 - 2024</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Specialist, Gen AI Development & ML Engineering</td></tr>
+      <tr><td>2022 - 2023</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Senior Analyst, Data Engineering & ML Engineering</td></tr>
+      <tr><td>2021 - 2022</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Analyst, Data & ML Engineering</td></tr>
+      <tr><td>2018 - 2019</td><td><a href="https://www.uni-paderborn.de/en/">Paderborn University, Paderborn</a></td><td>Research Assistant International Economics</td></tr>
+      <tr><td>2017 - 2017</td><td><a href="https://www.audi.de">Audi, Ingolstadt</a></td><td>Internship Project Management Audi A8</td></tr>
+      <tr><td>2017 - 2017</td><td><a href="https://www.viafintech.com/de/">Viafintech, Berlin</a></td><td>Internship Business Development</td></tr>
+    `;
+    app.appendChild(experienceTable);
+
+    // Education Section
+    app.appendChild(createElement("h2", "Education"));
+    const educationTable = createElement("table");
+    educationTable.innerHTML = `
+      <tr><th>When</th><th>Where</th><th>What</th></tr>
+      <tr><td>2018 - 2021</td><td><a href="https://www.uni-paderborn.de/en/">Paderborn University, Paderborn</a></td><td>M.Sc. Management Information Systems</td></tr>
+      <tr><td>2019 - 2020</td><td><a href="https://www.tohoku.ac.jp/en/">Tohoku University, Sendai, Japan</a></td><td>Special Research Student</td></tr>
+      <tr><td>2014 - 2018</td><td><a href="https://www.uni-paderborn.de/en/">Paderborn University, Paderborn</a></td><td>B.Sc. Business Administration and Economics</td></tr>
+    `;
+    app.appendChild(educationTable);
+
+      // Contact Section
+      app.appendChild(createElement("h2", "Contact"));
+      app.appendChild(createElement(
+        "p",
+        "I'd be glad to hear your thoughts and comments. This website is personal and non-commercial. It does not offer goods or services for sale, nor does it generate revenue through advertisements, affiliate links, or any other commercial activities."
+      ));
+
+    addSocialIcons(app);
+    });
+  </script>
+</body>
+</html>

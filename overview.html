@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Overview - Arne Wittmaack</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    html {
+      overflow-y: scroll;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 100pt;
+      height: 100pt;
+      float: right;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .social-icons i {
+      font-size: 40px;
+      margin: 0 10px;
+      color: #333;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons i:hover {
+      color: #0077b5;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .top-links {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .top-links a {
+      color: #8B0000;
+      text-decoration: none;
+      font-size: 1em;
+      margin: 0 5px;
+    }
+
+    .top-links a:hover {
+      text-decoration: underline;
+    }
+
+    a:link {
+      color: #8B0000;
+      text-decoration: none;
+      font-size: 1em;
+      margin: 0 5px;
+    }
+    
+    a:visited {
+      color: #8B0000;
+      text-decoration: none;
+      font-size: 1em;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Main App Container -->
+  <div id="app"></div>
+
+  <!-- Import Reusable Components -->
+  <script src="assets/js/components.js"></script>
+
+  <!-- Main Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const app = document.getElementById("app");
+
+      // Add top bar component
+      addTopNavigationBarWithoutImage();
+
+      // Page Title
+      app.appendChild(createElement("h1", "Topic Overview"));
+
+      // Blog Posts Data
+      const blogPosts = [
+        {
+          "title": "Example",
+          "date": "<i>November 10th, 2024<i>",
+          "summary": "This is an example of how a published article would look like. Click on the title to read more.",
+          "link": "example.html",
+          "tags": ["Generative AI", "Machine Learning", "Fine-Tuning"]
+        }
+      ];
+
+      // Render Blog Posts
+      blogPosts.forEach(post => {
+        const postContainer = createElement("div", "", { class: "blog-post" });
+        const postTitle = createElement("h2");
+        const postLink = createElement("a", post.title, { href: post.link });
+        postTitle.appendChild(postLink);
+        const postDate = createElement("p", post.date);
+        const postSummary = createElement("p", post.summary);
+
+        postContainer.appendChild(postTitle);
+        postContainer.appendChild(postDate);
+        postContainer.appendChild(postSummary);
+
+        app.appendChild(postContainer);
+      });
+
+      // Add social icons
+      addSocialIcons(app);
+    });
+  </script>
+</body>
+</html>
