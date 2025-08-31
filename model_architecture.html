@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gen AI Architecture Evolution</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    html {
+      overflow-y: scroll;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 100pt;
+      height: 100pt;
+      float: right;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .social-icons i {
+      font-size: 40px;
+      margin: 0 10px;
+      color: #333;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons i:hover {
+      color: #0077b5;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .top-links {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .top-links a {
+      color: #8B0000;
+      text-decoration: none;
+      font-size: 1em;
+      margin: 0 5px;
+    }
+
+    .top-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main App Container -->
+  <div id="app"></div>
+
+  <!-- Import Reusable Components -->
+  <script src="assets/js/components.js"></script>
+
+  <!-- Main Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const app = document.getElementById("app");
+
+      // Add top navigation bar
+      addTopNavigationBarWithoutImage();
+
+      // Blog Post Content
+      app.appendChild(createElement("h1", "The Evolution of AI System Architecture"));
+      
+      // Create a container to center the audio player
+      const audioContainer = createElement("div", "", { style: "display: flex; justify-content: center; margin-top: 10px;" });
+      const audioPlayer = createElement("audio", "", {
+        controls: true,
+        src: "assets/audio/model_architecture.m4a",
+        type: "audio/wav"
+      });
+      audioContainer.appendChild(audioPlayer);
+      app.appendChild(audioContainer);
+      
+      app.appendChild(createElement("p", "<i>August 31, 2025<i>"));
+      app.appendChild(createElement("p", "For decades, an 'AI model' was a simple concept: a single, standalone tool like a decision tree or neural network. While this definition remains accurate for traditional AI deployments, it is becoming misleading in the context of modern AI systems with Large Language Models, where the complexity and interdependencies extend far beyond a single, self-contained model."));
+      app.appendChild(createElement("p", "For many developers, Large Language Models (LLMs) can feel like opaque tools — accessible mainly through an API that delivers useful tokens in response to prompts. They are often described in simplified terms as systems that “predict the next token.” In reality, state-of-the-art LLMs are evolving beyond the notion of a single monolithic model. Increasingly, they function as composed systems, routing requests through retrieval modules, specialist models, and verification layers to balance quality, latency, cost, and other operational priorities."));
+      app.appendChild(createElement("p", "The release of OpenAI’s <a href=https://openai.com/gpt-5/>GPT-5</a>—which many perceived as underwhelming—illustrates this shift in focus. Historically, OpenAI has excelled at product building. With GPT-5, they emphasized architectural decisions as a core feature. GPT-5 tops many benchmarks, but its performance gains may signal the beginning of a plateau, whether due to compute limits, algorithmic constraints, or data scarcity. Much of the commentary has focused on the fact that the leap from GPT-4 to GPT-5 feels less dramatic than the leap from GPT-3.5 to GPT-4, fueling discussions about diminishing innovation. Yet this perception is partly shaped by release cadence: there were far more incremental models and updates released between GPT-4 and GPT-5 than between GPT-3.5 and GPT-4. The generational jump remains substantial in absolute terms, but because users experienced a series of intermediate improvements, it feels less like a single, transformative leap. This shift also highlights where the real innovation is moving: beyond raw model weights (core model architecture), into orchestration and composition of systems (system architecture), and ultimately into how these systems are served, integrated, and productized at scale (serving, inference, integration). In this sense, GPT-5 is not only about benchmark leaps, but also about the maturation of the stack."));
+      
+      app.appendChild(createElement("h2", "Key areas of evolution"));
+      app.appendChild(createElement("p", "I believe advancements can be observed in the following areas:"));
+      
+      app.appendChild(createElement("h4", "1. Core Model Architecture"));
+      app.appendChild(createElement("p", "Transformers remain the foundational abstraction for today’s state-of-the-art language and multimodal models. Innovations such as Mixture-of-Experts (MoE) architectures have improved scalability by activating only a subset of experts per token, allowing for larger effective capacity without a linear increase in cost. Training stability at massive scale has also advanced, and features like built-in request routing hint at models taking on responsibilities that once lived outside their boundaries. Still, the pace of change here feels incremental compared to earlier leaps — reinforcing the sense that the biggest breakthroughs are shifting away from raw architectures and toward how models are embedded into larger systems."));      
+      
+      app.appendChild(createElement("h4", "2. Gen AI System Architecture and Orchestration"));
+      app.appendChild(createElement("p", "If core architectures now deliver mostly incremental gains, the real frontier lies in how models are orchestrated within larger systems. Agentic patterns, retrieval-augmented generation (RAG), tool use, memory modules, and policy layers are reshaping LLMs from standalone predictors into components of broader reasoning engines. Increasingly, companies are building modular pipelines where tasks are decomposed, routed, and recomposed — often blending general-purpose LLMs with smaller, specialized models."));
+      app.appendChild(createElement("p", "The big challenge for generative AI has always been integration into systems that are stable and — as far as possible for inherently stochastic models — predictable and reliable. While AI models are already good enough for many individual tasks (especially when problems are broken down and modeled carefully), the true difficulty lies in composing them into complex, reliable architectures. Beyond composition, integration with existing software landscapes and ensuring proper governance, monitoring, and control remain the hardest and most strategically important parts of the puzzle."));
+      app.appendChild(createElement("p", "This challenge is echoed by a recent MIT study, which found that 95% of enterprise GenAI pilots fail not because the models are weak, but because companies try to avoid friction. Smooth demos and generic tools impress in the short term, yet collapse when confronted with organizational texture, compliance, and integration needs. The 5% of pilots that succeed do so by embracing friction: building memory layers, feedback loops, and governance mechanisms that turn stochastic outputs into reliable workflows. In other words, friction is not a flaw to be eliminated, but a design input — the resistance that forces adaptation and makes systems resilient. For system architecture, this means the hard work lies not in stringing together more capabilities, but in engineering for durability, predictability, and trust where non-deterministic components meet constraints."));
+      app.appendChild(createElement("p", "Ultimately, success in this space requires close collaboration with the people who will use and interact with these systems daily. Involving them early in product design not only ensures that tools address real workflows, but also fosters trust and acceptance. The most resilient GenAI systems will be those co-shaped with their users, balancing technical ambition with human judgment and organizational reality."));
+
+      app.appendChild(createElement("h4", "3. Serving, Inference, Integration"));
+      app.appendChild(createElement("p", "The challenge of deploying these systems at scale is reshaping the infrastructure stack. Optimized serving layers, continuous batching, and low-latency GPU scheduling have become as important as model design. Enterprises increasingly demand flexible integration: containerized deployments, on-premise compliance setups, hybrid cloud orchestration, and APIs that are both standardized and extensible. Inference is no longer just about tokens per second; it’s about ensuring observability, traceability, cost governance, and seamless interaction with downstream business logic. The competitive edge now lies in how well models can be productized, not merely how they are trained."));
+
+      app.appendChild(createElement("h2", "Final thoughts"));
+      app.appendChild(createElement("p", "What’s notable is how responsibilities once considered ‘outside the model’ might be moving into the model’s own scope. For example, request routing — traditionally handled by middleware or external orchestration layers — is now being embedded directly within the latest LLM releases. By broadening the definition and footprint of what a model is, providers like OpenAI may gradually absorb architectural responsibilities that were once the domain of third-party systems. This raises strategic questions: will LLM vendors begin to displace parts of the software stack such as routers, validators, or even application logic? The implications for ecosystems, vendor lock-in, and system design will be interesting to follow. Today, however, it is only speculation."));
+      app.appendChild(createElement("p", "For organizations adopting LLMs, prioritize building modular, user-informed systems that embrace friction as a path to reliability, and evaluate vendors not just on model performance but on their ability to integrate seamlessly into your workflows."));
+
+      // Add social icons
+      addSocialIcons(app);
+    });
+  </script>
+</body>
+</html>
