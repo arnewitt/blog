@@ -3,77 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gen AI Architecture Evolution</title>
+  <meta name="description" content="My perspective on the evolution of AI model system architecture, highlighting how Large Language Models are shifting from standalone tools to complex, composed systems.">
+  <meta property="og:title" content="Gen AI Architecture Evolution - Arne Wittmaack">
+  <meta property="og:description" content="How Large Language Models are shifting from standalone tools to complex, composed systems.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.arnewittmaack.org/model_architecture.html">
+  <title>Gen AI Architecture Evolution - Arne Wittmaack</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <style>
-    html {
-      overflow-y: scroll;
-    }
-    
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    img {
-      border-radius: 50%;
-      width: 100pt;
-      height: 100pt;
-      float: right;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 20px 0;
-    }
-
-    .social-icons i {
-      font-size: 40px;
-      margin: 0 10px;
-      color: #333;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .social-icons i:hover {
-      color: #0077b5;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-
-    th, td {
-      border-bottom: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-
-    .top-links {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .top-links a {
-      color: #8B0000;
-      text-decoration: none;
-      font-size: 1em;
-      margin: 0 5px;
-    }
-
-    .top-links a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <!-- Main App Container -->
@@ -98,12 +35,12 @@
       const audioPlayer = createElement("audio", "", {
         controls: true,
         src: "assets/audio/model_architecture.m4a",
-        type: "audio/wav"
+        type: "audio/mp4"
       });
       audioContainer.appendChild(audioPlayer);
       app.appendChild(audioContainer);
       
-      app.appendChild(createElement("p", "<i>August 31, 2025<i>"));
+      app.appendChild(createElement("p", "<i>August 31, 2025</i>"));
       app.appendChild(createElement("p", "For decades, an 'AI model' was a simple concept: a single, standalone tool like a decision tree or neural network. While this definition remains accurate for traditional AI deployments, it is becoming misleading in the context of modern AI systems with Large Language Models, where the complexity and interdependencies extend far beyond a single, self-contained model."));
       app.appendChild(createElement("p", "For many developers, Large Language Models (LLMs) can feel like opaque tools — accessible mainly through an API that delivers useful tokens in response to prompts. They are often described in simplified terms as systems that “predict the next token.” In reality, state-of-the-art LLMs are evolving beyond the notion of a single monolithic model. Increasingly, they function as composed systems, routing requests through retrieval modules, specialist models, and verification layers to balance quality, latency, cost, and other operational priorities."));
       app.appendChild(createElement("p", "The release of OpenAI’s <a href=https://openai.com/gpt-5/>GPT-5</a>—which many perceived as underwhelming—illustrates this shift in focus. Historically, OpenAI has excelled at product building. With GPT-5, they emphasized architectural decisions as a core feature. GPT-5 tops many benchmarks, but its performance gains may signal the beginning of a plateau, whether due to compute limits, algorithmic constraints, or data scarcity. Much of the commentary has focused on the fact that the leap from GPT-4 to GPT-5 feels less dramatic than the leap from GPT-3.5 to GPT-4, fueling discussions about diminishing innovation. Yet this perception is partly shaped by release cadence: there were far more incremental models and updates released between GPT-4 and GPT-5 than between GPT-3.5 and GPT-4. The generational jump remains substantial in absolute terms, but because users experienced a series of intermediate improvements, it feels less like a single, transformative leap. This shift also highlights where the real innovation is moving: beyond raw model weights (core model architecture), into orchestration and composition of systems (system architecture), and ultimately into how these systems are served, integrated, and productized at scale (serving, inference, integration). In this sense, GPT-5 is not only about benchmark leaps, but also about the maturation of the stack."));
