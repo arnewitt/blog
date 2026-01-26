@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Why I decided to ban AI coding assistance from my personal hobby projects while continuing to use it professionally.">
+  <meta property="og:title" content="I Banned AI Coding Assistance from My Personal Projects - Arne Wittmaack">
+  <meta property="og:description" content="Why I decided to ban AI coding assistance from my personal hobby projects while continuing to use it professionally.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.arnewittmaack.org/coding_agents.html">
+  <title>I Banned AI Coding Assistance from My Personal Projects - Arne Wittmaack</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Main App Container -->
+  <div id="app"></div>
+
+  <!-- Import Reusable Components -->
+  <script src="assets/js/components.js"></script>
+
+  <!-- Main Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const app = document.getElementById("app");
+
+      // Add top navigation bar
+      addTopNavigationBarWithoutImage();
+      
+      // Blog Post Content
+      app.appendChild(createElement("h1", "I Banned AI Coding Assistance from My Personal Projects"));
+
+      // Create a container to center the audio player
+      const audioContainer = createElement("div", "", { style: "display: flex; justify-content: center; margin-top: 10px;" });
+      const audioPlayer = createElement("audio", "", {
+        controls: true,
+        src: "assets/audio/banning_ai.m4a",
+        type: "audio/mp4"
+      });
+      audioContainer.appendChild(audioPlayer);
+      app.appendChild(audioContainer);
+
+      // Blog Post Content
+      app.appendChild(createElement("p", "<i>January 26, 2026</i>"));
+      app.appendChild(createElement("p", "I admit, my opinion on the usefulness of AI coding agents has changed a lot over the course of the last months. I used to be a lot more doubtful. In the beginning, I was just as impressed as anyone else by the advancements in AI models and agent capabilities."));
+      app.appendChild(createElement("p", "My initial positive reaction then quickly changed to doubt. Looking at the performance of early versions of Codex or the very annoying &ldquo;copy-and-paste&rdquo; debugging routine using ChatGPT didn't live up to their promises. More often than I'd like to admit it, I ended a day wondering why my code base didn't work even though I had 23 well-documented commits and 2310 lines of code changes."));
+      app.appendChild(createElement("p", "Well, there is a learning curve to it. Claude Code, Gemini CLI, OpenCode and even Codex are impressive examples of modern technology and engineering. Criticising a tool that can create a working piece of software in less than 15 minutes based on a not-so-well-refined prompt for not living up to my imaginary standards that I could not even articulate is pretty much out of touch with reality. Yes, coding agents often use outdated packages, and let's not even get started about cybersecurity. Accepting and dealing with certain limitations rather than growing frustrated helped me find a more balanced approach. At the same time, coding agents and AI models continue to improve. In the end, my productivity grew, and so did my satisfaction."));
+
+      app.appendChild(createElement("h2", "Where Did the Fun Go?"));
+      app.appendChild(createElement("p", "The reason I went into programming was simply that I had (and still have) a lot of fun with it. Looking at a problem (and sometimes just making one up), thinking about how to solve it in a million ways, and then struggling to find the best solution can be a rollercoaster of emotions. This rollercoaster kept me awake throughout more than one night, it helped me learn more about myself, and it is an excellent way to stay mentally active."));
+      app.appendChild(createElement("p", "AI coding agents have taken a lot of these experiences away from me. I am still struggling to find my personal ideal in using these agents without &ldquo;losing control&rdquo; over the creative process. Rationally, I understand that I should &ldquo;lead&rdquo; AI agents towards a goal, but actually managing to do that is not as straightforward. More often than not, I feel like I get lazy and don't understand anymore what I am in the process of building. Learning new things got replaced with waiting for a coding agent to complete my instructions while I jump between browser tabs in a very distracting and inattentive manner. This is no fun way to spend the weekend."));
+      app.appendChild(createElement("p", "As a result, I decided to ban AI agents completely from my personal hobby projects. I do hobby projects in order to enjoy coding and learn new things. Using an AI agent takes the very things I try to get out of it away from me."));
+
+      app.appendChild(createElement("h2", "Staying Competitive"));
+      app.appendChild(createElement("p", "To be clear, this is not a rejection of AI coding tools altogether. I recognise that staying competitive and up to date means embracing these tools rather than ignoring them. I will continue to use AI coding agents, but in a very conscious way. The key distinction for me is intent: at work, the goal is efficiency and output; in my personal projects, the goal is enjoyment and growth. Separating these two contexts allows me to benefit from AI assistance where it makes sense while preserving the spaces where I want to learn and struggle on my own terms."));
+      app.appendChild(createElement("p", "For me, this feels like it is a healthier way of living."));
+
+      // Add social icons
+      addSocialIcons(app);
+    });
+  </script>
+</body>
+</html>
