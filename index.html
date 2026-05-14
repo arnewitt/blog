@@ -32,78 +32,58 @@
 </head>
 
 <body>
-  <!-- Profile Image -->
   <img src="assets/images/avatar.jpeg" alt="Arne Wittmaack">
 
-  <!-- Main App Container -->
-  <div id="app"></div>
+  <div id="app">
+    <h1>Arne Wittmaack</h1>
+    <p>I am Arne Wittmaack, a Data & Generative AI Architect at Accenture.</p>
 
-  <!-- Import Reusable Components -->
+    <h2>About Me And This Website</h2>
+    <p>Over the years, I realized that writing helps me structure my own thoughts. This site is primarily for myself. The content is focused on technology but without a specific topic in mind. I create content irregularly, with no claims to completeness. If you do not want to read through the whole site, listen to the following podcast that was created by AI using only this site's content as input. Please don't take it too seriously.</p>
+
+    <div style="display: flex; justify-content: center; margin-top: 10px;">
+      <audio controls src="assets/audio/podcast.wav"></audio>
+    </div>
+
+    <h2>Professional Experience</h2>
+    <table>
+      <caption class="visually-hidden">Professional experience timeline</caption>
+      <thead>
+        <tr><th scope="col">When</th><th scope="col">Where</th><th scope="col">What</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2024 - today</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Associate Manager, Gen AI Architecture & ML Engineering</td></tr>
+        <tr><td>2023 - 2024</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Specialist, Gen AI Architecture & ML Engineering</td></tr>
+        <tr><td>2022 - 2023</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Senior Analyst, Data & ML Engineering</td></tr>
+        <tr><td>2021 - 2022</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Analyst, Data & ML Engineering</td></tr>
+        <tr><td>2018 - 2019</td><td><a href="https://www.uni-paderborn.de/en/">Paderborn University, Paderborn</a></td><td>Research Assistant International Economics</td></tr>
+        <tr><td>2017 - 2017</td><td><a href="https://www.audi.de">Audi, Ingolstadt</a></td><td>Internship Project Management Audi A8</td></tr>
+        <tr><td>2017 - 2017</td><td><a href="https://www.viafintech.com/de/">Viafintech, Berlin</a></td><td>Internship Business Development</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Education</h2>
+    <table>
+      <caption class="visually-hidden">Education history</caption>
+      <thead>
+        <tr><th scope="col">When</th><th scope="col">Where</th><th scope="col">What</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2018 - 2021</td><td><a href="https://www.uni-paderborn.de/en/">Paderborn University, Paderborn</a></td><td>M.Sc. Management Information Systems</td></tr>
+        <tr><td>2019 - 2020</td><td><a href="https://www.tohoku.ac.jp/en/">Tohoku University, Sendai, Japan</a></td><td>Special Research Student in Statistics and Machine Learning</td></tr>
+        <tr><td>2014 - 2018</td><td><a href="https://www.uni-paderborn.de/en/">Paderborn University, Paderborn</a></td><td>B.Sc. Business Administration and Economics</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Contact</h2>
+    <p>I'd be glad to hear your thoughts and comments. This website is personal and non-commercial. It does not offer goods or services for sale, nor does it generate revenue through advertisements, affiliate links, or any other commercial activities.</p>
+  </div>
+
   <script src="assets/js/components.js"></script>
-
-  <!-- Main Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const app = document.getElementById("app");
-
-      // Add top bar component
       addTopNavigationBar();
-
-      // Title and introduction
-      app.appendChild(createElement("h1", "Arne Wittmaack"));
-      app.appendChild(createElement("p", "I am Arne Wittmaack, a Data & Generative AI Architect at Accenture."));
-      app.appendChild(createElement("h2", "About Me And This Website"));
-      app.appendChild(createElement(
-        "p",
-        "Over the years, I realized that writing helps me structure my own thoughts. This site is primarily for myself. The content is focused on technology but without a specific topic in mind. I create content irregularly, with no claims to completeness. If you do not want to read through the whole site, listen to the following podcast that was created by AI using only this site's content as input. Please don't take it too seriously."
-      ));
-
-      // Create a container to center the audio player
-      const audioContainer = createElement("div", "", { style: "display: flex; justify-content: center; margin-top: 10px;" });
-      const audioPlayer = createElement("audio", "", {
-        controls: true,
-        src: "assets/audio/podcast.wav",
-        type: "audio/wav"
-      });
-      audioContainer.appendChild(audioPlayer);
-      app.appendChild(audioContainer);
-
-    // Professional Experience Section
-    app.appendChild(createElement("h2", "Professional Experience"));
-    const experienceTable = createElement("table");
-    experienceTable.innerHTML = `
-      <caption class="visually-hidden">Professional experience timeline</caption>
-      <tr><th scope="col">When</th><th scope="col">Where</th><th scope="col">What</th></tr>
-      <tr><td>2024 - today</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Associate Manager, Gen AI Architecture & ML Engineering</td></tr>
-      <tr><td>2023 - 2024</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Specialist, Gen AI Architecture & ML Engineering</td></tr>
-      <tr><td>2022 - 2023</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Senior Analyst, Data & ML Engineering</td></tr>
-      <tr><td>2021 - 2022</td><td><a href="https://www.accenture.com/de-de">Accenture, Düsseldorf</a></td><td>Analyst, Data & ML Engineering</td></tr>
-      <tr><td>2018 - 2019</td><td><a href="https://www.uni-paderborn.de/en/">Paderborn University, Paderborn</a></td><td>Research Assistant International Economics</td></tr>
-      <tr><td>2017 - 2017</td><td><a href="https://www.audi.de">Audi, Ingolstadt</a></td><td>Internship Project Management Audi A8</td></tr>
-      <tr><td>2017 - 2017</td><td><a href="https://www.viafintech.com/de/">Viafintech, Berlin</a></td><td>Internship Business Development</td></tr>
-    `;
-    app.appendChild(experienceTable);
-
-    // Education Section
-    app.appendChild(createElement("h2", "Education"));
-    const educationTable = createElement("table");
-    educationTable.innerHTML = `
-      <caption class="visually-hidden">Education history</caption>
-      <tr><th scope="col">When</th><th scope="col">Where</th><th scope="col">What</th></tr>
-      <tr><td>2018 - 2021</td><td><a href="https://www.uni-paderborn.de/en/">Paderborn University, Paderborn</a></td><td>M.Sc. Management Information Systems</td></tr>
-      <tr><td>2019 - 2020</td><td><a href="https://www.tohoku.ac.jp/en/">Tohoku University, Sendai, Japan</a></td><td>Special Research Student in Statistics and Machine Learning</td></tr>
-      <tr><td>2014 - 2018</td><td><a href="https://www.uni-paderborn.de/en/">Paderborn University, Paderborn</a></td><td>B.Sc. Business Administration and Economics</td></tr>
-    `;
-    app.appendChild(educationTable);
-
-      // Contact Section
-      app.appendChild(createElement("h2", "Contact"));
-      app.appendChild(createElement(
-        "p",
-        "I'd be glad to hear your thoughts and comments. This website is personal and non-commercial. It does not offer goods or services for sale, nor does it generate revenue through advertisements, affiliate links, or any other commercial activities."
-      ));
-
-    addSocialIcons(app);
+      addSocialIcons(document.getElementById("app"));
     });
   </script>
 </body>

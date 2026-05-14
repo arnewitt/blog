@@ -14,66 +14,33 @@
 </head>
 
 <body>
-  <!-- Main App Container -->
-  <div id="app"></div>
+  <div id="app">
+    <h1>Article Overview</h1>
 
-  <!-- Import Reusable Components -->
+    <div class="blog-post">
+      <h2><a href="coding_agents.html">I stopped using coding agents</a></h2>
+      <p><i>January 26, 2026</i></p>
+      <p>I banned AI coding tools from my hobby projects to preserve the joy of learning and problem-solving, while still using them consciously in my professional work.</p>
+    </div>
+
+    <div class="blog-post">
+      <h2><a href="model_architecture.html">Gen AI Architecture</a></h2>
+      <p><i>August 31, 2025</i></p>
+      <p>My perspective on the evolution of AI model system architecture, highlighting how Large Language Models are shifting from standalone tools to complex, composed systems.</p>
+    </div>
+
+    <div class="blog-post">
+      <h2><a href="genai_maturity.html">Gen AI Readiness</a></h2>
+      <p><i>July 4, 2025</i></p>
+      <p>My perspective on what recent research reveals about the real-world readiness and practical challenges of deploying generative AI applications today.</p>
+    </div>
+  </div>
+
   <script src="assets/js/components.js"></script>
-
-  <!-- Main Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const app = document.getElementById("app");
-
-      // Add top bar component
       addTopNavigationBarWithoutImage();
-
-      // Page Title
-      app.appendChild(createElement("h1", "Article Overview"));
-
-      // Blog Posts Data
-      const blogPosts = [
-      {
-        "title": "I stopped using coding agents",
-        "date": "<i>January 26, 2026</i>",
-        "summary": "I banned AI coding tools from my hobby projects to preserve the joy of learning and problem-solving, while still using them consciously in my professional work.",
-        "link": "coding_agents.html",
-        "tags": ["Generative AI", "Coding Agents", "Fun"]
-      },
-      {
-        "title": "Gen AI Architecture",
-        "date": "<i>August 31, 2025</i>",
-        "summary": "My perspective on the evolution of AI model system architecture, highlighting how Large Language Models are shifting from standalone tools to complex, composed systems.",
-        "link": "model_architecture.html",
-        "tags": ["Generative AI", "Machine Learning", "Architecture"]
-      },
-      {
-        "title": "Gen AI Readiness",
-        "date": "<i>July 4, 2025</i>",
-        "summary": "My perspective on what recent research reveals about the real-world readiness and practical challenges of deploying generative AI applications today.",
-        "link": "genai_maturity.html",
-        "tags": ["Generative AI", "Machine Learning", "Current state of AI"]
-      }
-      ];
-
-      // Render Blog Posts
-      blogPosts.forEach(post => {
-        const postContainer = createElement("div", "", { class: "blog-post" });
-        const postTitle = createElement("h2");
-        const postLink = createElement("a", post.title, { href: post.link });
-        postTitle.appendChild(postLink);
-        const postDate = createElement("p", post.date);
-        const postSummary = createElement("p", post.summary);
-
-        postContainer.appendChild(postTitle);
-        postContainer.appendChild(postDate);
-        postContainer.appendChild(postSummary);
-
-        app.appendChild(postContainer);
-      });
-
-      // Add social icons
-      addSocialIcons(app);
+      addSocialIcons(document.getElementById("app"));
     });
   </script>
 </body>

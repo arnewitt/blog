@@ -3,32 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Example</title>
+  <meta name="description" content="Article description here.">
+  <meta property="og:title" content="Article Title - Arne Wittmaack">
+  <meta property="og:description" content="Article description here.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.arnewittmaack.org/article_filename.html">
+  <title>Article Title - Arne Wittmaack</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Main App Container -->
-  <div id="app"></div>
+  <div id="app">
+    <h1>Article Title</h1>
 
-  <!-- Import Reusable Components -->
+    <!-- Optional audio player -->
+    <!-- <div style="display: flex; justify-content: center; margin-top: 10px;">
+      <audio controls src="assets/audio/filename.m4a"></audio>
+    </div> -->
+
+    <p><i>Month DD, YYYY</i></p>
+    <p>Article content here.</p>
+  </div>
+
   <script src="assets/js/components.js"></script>
-
-  <!-- Main Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const app = document.getElementById("app");
-
-      // Add top navigation bar
       addTopNavigationBarWithoutImage();
-
-      // Blog Post Content
-      app.appendChild(createElement("h1", "Getting started"));
-      app.appendChild(createElement("p", "<i>November 10th, 2024</i>"));
-      app.appendChild(createElement("p", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."));
-
-      // Add social icons
-      addSocialIcons(app);
+      addSocialIcons(document.getElementById("app"));
     });
   </script>
 </body>
